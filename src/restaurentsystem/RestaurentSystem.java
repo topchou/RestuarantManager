@@ -6,7 +6,7 @@
 package restaurentsystem;
 
 import javax.swing.JFrame;
-
+//Main Class
 /**
  *
  * @author Shahin
