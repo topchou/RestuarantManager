@@ -1,6 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.3" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
-  associations="true" dependencies="true" nesting-relationships="true">  
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="restaurentsystem.LogIn" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/LogIn.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="273" x="437" y="-99"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="restaurentsystem.BillManagement" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/BillManagement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="58" width="273" x="-287" y="686"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="restaurentsystem.DeleteItem" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/DeleteItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="56" width="273" x="70" y="682"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="restaurentsystem.DeleteLabour" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/DeleteLabour.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="273" x="1049" y="680"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="restaurentsystem.InserLabour" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/InserLabour.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="273" x="1646" y="682"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="restaurentsystem.InsertItem" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/InsertItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="273" x="709" y="679"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="restaurentsystem.inTotal" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/inTotal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="56" width="111" x="-82" y="869"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="restaurentsystem.ItemMngmnt" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/ItemMngmnt.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="59" width="283" x="408" y="550"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="restaurentsystem.LabourManagement" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/LabourManagement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="283" x="1393" y="547"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="restaurentsystem.ModifyItem" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/ModifyItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="57" width="283" x="386" y="677"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="restaurentsystem.ModifyLabour" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/ModifyLabour.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="283" x="1345" y="680"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="restaurentsystem.OrderManagement" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/OrderManagement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="283" x="-466" y="527"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="restaurentsystem.ReciptFile" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/ReciptFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="181" x="-575" y="867"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="restaurentsystem.RestaurentManagement" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/RestaurentManagement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="56" width="267" x="440" y="-14"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="restaurentsystem.RestaurentSystem" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/RestaurentSystem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="147" x="214" y="-97"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="restaurentsystem.TotalPrice" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/TotalPrice.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="181" x="-323" y="868"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="restaurentsystem.ViewItem" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/ViewItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="58" width="273" x="664" y="361"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="restaurentsystem.ViewLabour" project="RestaurantManagager" 
+    file="/RestaurantManagager/src/restaurentsystem/ViewLabour.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="55" width="273" x="1470" y="359"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="19">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="20" name="r"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="22">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="23">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="24" name="b"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="26">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="28">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="29">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="30" name="t"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="33">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="34">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="35">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="36" name="it"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="38">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="39">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="40">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="41">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="42">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="44">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
