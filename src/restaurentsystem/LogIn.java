@@ -130,7 +130,7 @@ public class LogIn extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(userNameField.getText().equalsIgnoreCase("shahin")){
+        if(userNameField.getText().equalsIgnoreCase("topChou")){
             
             JOptionPane.showMessageDialog(this, "Access granted");
             this.dispose();

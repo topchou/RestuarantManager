@@ -20,3 +20,5 @@ Faluda 	3	21.0
 Banana 	5	50.0
 Roti 	2	4.0
 	
+Burger 	5	20.0
+	

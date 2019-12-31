@@ -3,7 +3,7 @@ Pizza
 -8
 Burger
 4
-0
+-5
 Fried rice
 5
 87
