@@ -138,7 +138,7 @@ public class ViewItem extends javax.swing.JFrame{
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        ItemMngmnt im = new ItemMngmnt();
+    	Management im = new Management("Item");
         im.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed

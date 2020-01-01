@@ -168,8 +168,7 @@ public class DeleteItem extends javax.swing.JFrame {
     }//GEN-LAST:event_dltButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
-        ItemMngmnt im = new ItemMngmnt();
+    	Management im = new Management("Item");
         im.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
