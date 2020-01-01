@@ -141,7 +141,8 @@ public class RestaurentManagement extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ItemMngmnt im = new ItemMngmnt();
+        //ItemMngmnt im = new ItemMngmnt();
+    	Management im = new Management("Item");
         im.setVisible(true);
         this.dispose();
               
@@ -149,8 +150,9 @@ public class RestaurentManagement extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-       LabourManagement l = new LabourManagement();
-       l.setVisible(true);
+       //LabourManagement l = new LabourManagement();
+    	Management l=new Management("Labour");
+        l.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
