@@ -17,7 +17,8 @@ import javax.swing.JOptionPane;
  * @author Shahin
  */
 public class ModifyItem extends javax.swing.JFrame {
-    private MdfItem m;
+    //private MdfItem m;
+	private Items m;
     private String srcName;
     private String modName;
     private String modPrice;
@@ -39,7 +40,7 @@ public class ModifyItem extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
        private void performFileRelatedTask()
     {
-        m = new MdfItem();
+        m = new Items();
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -90,11 +91,9 @@ public class ModifyItem extends javax.swing.JFrame {
         });
 
         jLabel2.setText("Enter New Name");
-
         jLabel3.setText("Enter New Price");
-
         jLabel4.setText("Enter New Quantity");
-
+        
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -162,12 +161,13 @@ public class ModifyItem extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
+        
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         // TODO add your handling code here:
-        m = new MdfItem();
-            text.setText(m.getFullNames().toString());
+        m = new Items();
+        text.setText(m.getFullNames().toString());
         
 
     }//GEN-LAST:event_viewActionPerformed
@@ -183,12 +183,14 @@ public class ModifyItem extends javax.swing.JFrame {
         m.setPrice(modPrice);
         ModQuantity=mQuantity.getText();
         m.setQuantity(ModQuantity);
-        m.ModifyItem();
+        m.modifyItem();
         modText.setText("");
         mName.setText("");
         mPrice.setText("");
         mQuantity.setText("");
-         JOptionPane.showMessageDialog(this, "Item has been Modified");
+        JOptionPane.showMessageDialog(this, "Item has been Modified");
+        m = new Items();
+        text.setText(m.getFullNames().toString());
 
     }//GEN-LAST:event_modifyButtonActionPerformed
 
@@ -249,163 +251,4 @@ public class ModifyItem extends javax.swing.JFrame {
     private javax.swing.JButton view;
     // End of variables declaration//GEN-END:variables
 }
-class MdfItem {
-    
-    private Scanner scan;
-    private String srchName;
 
-   
-
-    private String name;
-    
-    
-    private String price;
-    private String quantity;
-    private StringBuilder fullnames;
-    private String itemName [];
-    
-    public MdfItem()
-    {
-        fullnames = new StringBuilder();
-        openFile();
-        readFile();
-        
-        closeFile();
-        
-    }
-    
-    public StringBuilder getFullNames()
-    {
-        return fullnames;
-    }
-    
-    private void openFile()
-    {
-        try
-        {
-            scan = new Scanner(new File("item.txt"));
-            System.out.println("File found!");
-        }
-        
-        catch(Exception e)
-        {
-            System.out.println("File not found");
-        }
-    }
-    
-    public void setSrchName(String srchName) {
-        this.srchName = srchName;
-    }
-     public String getSrchName() {
-        return srchName;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    public void setPrice(String price) {
-        this.price = price;
-    }
-    
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
-    
-    public String getPrice() {
-        return price;
-    }
-    
-    public String getQuantity() {
-        return quantity;
-    }
-    
-    
-    private void readFile()
-    {
-        try{
-            while(scan.hasNextLine())
-        {
-            name = scan.nextLine();
-            price = scan.nextLine();
-            quantity=scan.nextLine();
-            fullnames.append(name + " \t" + price + " \t"+quantity+"\n");
-        }
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
-    }
-    private void closeFile()
-    {
-        scan.close();
-    }
-    
-    public  void ModifyItem(){
-        
-        String srcKey = getSrchName();
-        
-        System.out.println(srcKey+"will be modified");
-        
-        
-        int c=0,track, cnt=0,temp=0;
-        
-        try{
-            Scanner sc = new Scanner(new FileInputStream("item.txt"));
-            while(sc.hasNextLine()){
-                cnt++;
-                sc.nextLine();
-                
-            }
-            itemName= new String[cnt];
-            sc.close();
-            sc = new Scanner(new FileInputStream("item.txt"));
-            while(sc.hasNextLine()){
-                itemName[c]=sc.nextLine();
-                if(itemName[c].equalsIgnoreCase(srcKey)){
-                    temp=c;
-                    System.out.println("Index will be deleted" +c);
-                }
-                c++;
-                
-            }
-            
-            
-        }
-        catch(Exception e){
-            System.out.println(e);
-            
-        }
-        
-        try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
-            for (int i = 0; i < c; i++) {
-                if(i==temp ||i==temp+1 ||i==temp+2){
-                    pw.println(getName());
-                    pw.println(getPrice());
-                    pw.println(getQuantity());
-                    i+=2;
-                }
-                else{
-                    pw.println(itemName[i]);
-                }
-                
-            }
-            System.out.println("Your item has been deleted.");
-            pw.close();
-        }
-        catch (Exception e) {
-        }
-        
-        
-        
-        
-        
-    }
-    
-    
-    
-    
-}
