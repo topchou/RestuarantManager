@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Shahin
  */
-public class InserLabour extends javax.swing.JFrame {
+public class InserLabour extends javax.swing.JFrame implements Insert{
 
     /**
      * Creates new form InserLabour
@@ -31,7 +31,7 @@ public class InserLabour extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+    	insertButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -43,10 +43,10 @@ public class InserLabour extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 255));
 
-        jButton1.setText("Insert");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        insertButton.setText("Insert");
+        insertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+            	insertButtonActionPerformed(evt);
             }
         });
 
@@ -58,16 +58,9 @@ public class InserLabour extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Labour ID");
-
         jLabel2.setText("Labour Name");
-
         jLabel3.setText("Labour Salary");
 
-        idText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idTextActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,7 +82,7 @@ public class InserLabour extends javax.swing.JFrame {
                 .addGap(172, 172, 172))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(insertButton)
                 .addGap(128, 128, 128)
                 .addComponent(backButton)
                 .addGap(61, 61, 61))
@@ -115,7 +108,7 @@ public class InserLabour extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(insertButton)
                     .addComponent(backButton))
                 .addGap(141, 141, 141))
         );
@@ -124,31 +117,8 @@ public class InserLabour extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt",true));
-            System.out.println("file created");
-            String itemName = idText.getText();
-
-            String itemPrice = nameText.getText();
-
-            String itemQuantity = salaryText.getText();
-
-            pw.println(itemName);
-            pw.println(itemPrice);
-            pw.println(itemQuantity);
-
-            pw.close();
-
-        }
-        catch(Exception e){
-
-        }
-        idText.setText("");
-        nameText.setText("");
-        salaryText.setText("");
-         JOptionPane.showMessageDialog(this, "Item has been added");
+    private void insertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        insert();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -157,9 +127,32 @@ public class InserLabour extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
-    private void idTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idTextActionPerformed
+    @Override
+    public void insert() {
+    	 try {
+    		 PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt",true));
+             System.out.println("file created");
+             String itemName = idText.getText();
+
+             String itemPrice = nameText.getText();
+
+             String itemQuantity = salaryText.getText();
+
+             pw.println(itemName);
+             pw.println(itemPrice);
+             pw.println(itemQuantity);
+
+             pw.close();
+            
+         }
+    	 catch(Exception e){
+             
+         }
+    	 idText.setText("");
+         nameText.setText("");
+         salaryText.setText("");
+         JOptionPane.showMessageDialog(this, "Item has been added");
+    }
 
     /**
      * @param args the command line arguments
@@ -199,7 +192,7 @@ public class InserLabour extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JTextField idText;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton insertButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

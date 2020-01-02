@@ -13,7 +13,7 @@ import javax.swing.*;
  *
  * @author Shahin
  */
-public class InsertItem extends javax.swing.JFrame {
+public class InsertItem extends javax.swing.JFrame implements Insert{
     
     /**
      * Creates new form InsertItem
@@ -38,7 +38,7 @@ public class InsertItem extends javax.swing.JFrame {
         price = new javax.swing.JTextField();
         name = new javax.swing.JTextField();
         quantity = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        insertButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,10 +50,10 @@ public class InsertItem extends javax.swing.JFrame {
 
         jLabel3.setText("Item Quantity");
 
-        jButton1.setText("Insert");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        insertButton.setText("Insert");
+        insertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+            	insertButtonActionPerformed(evt);
             }
         });
 
@@ -85,7 +85,7 @@ public class InsertItem extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(jButton1)))
+                        .addComponent(insertButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backButton)
                 .addGap(111, 111, 111))
@@ -113,7 +113,7 @@ public class InsertItem extends javax.swing.JFrame {
                     .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(insertButton)
                     .addComponent(backButton))
                 .addGap(141, 141, 141))
         );
@@ -122,44 +122,40 @@ public class InsertItem extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt",true));
-            
-            String itemName = name.getText();
-           
-            String itemPrice = price.getText();
-            
-            String itemQuantity = quantity.getText();
-            
-            pw.println(itemName);
-            pw.println(itemPrice);
-            pw.println(itemQuantity);
-            
-            
-                  
-            
-            
-            pw.close();
-            
-            
-            
-        }
-        catch(Exception e){
-            
-        }
-        name.setText("");
-        price.setText("");
-        quantity.setText("");
-        JOptionPane.showMessageDialog(this, "Item has been added");
+    private void insertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    	insert();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+   
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         Management im = new Management("Item");
         im.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
+    
+    @Override
+    public void insert() {
+    	 try {
+             PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt",true));
+             
+             String itemName = name.getText();
+             String itemPrice = price.getText();
+             String itemQuantity = quantity.getText();
+             
+             pw.println(itemName);
+             pw.println(itemPrice);
+             pw.println(itemQuantity);
+             pw.close();
+            
+         }
+    	 catch(Exception e){
+             
+         }
+         name.setText("");
+         price.setText("");
+         quantity.setText("");
+         JOptionPane.showMessageDialog(this, "Item has been added");
+    }
 
     /**
      * @param args the command line arguments
@@ -168,7 +164,7 @@ public class InsertItem extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton insertButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
