@@ -180,7 +180,7 @@ public class ModifyItem extends javax.swing.JFrame {
         modPrice =mPrice.getText();
         modQuantity=mQuantity.getText();
         
-        items.modifyItem(srcName, modName, modPrice, modQuantity);
+        items.modify(srcName, modName, modPrice, modQuantity);
         
         modText.setText("");
         mName.setText("");

@@ -180,7 +180,7 @@ public class ModifyLabour extends javax.swing.JFrame {
         modName =mName.getText();
         modSalary=mSalary.getText();
 
-        labours.ModifyItem(srcID,modID,modName,modSalary);
+        labours.modify(srcID,modID,modName,modSalary);
         
         modText.setText("");
         mID.setText("");

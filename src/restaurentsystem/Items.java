@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-public class Items {
+public class Items implements ManageTarget{
 	private Scanner scan;
 	private String name;
 	private String price;
@@ -63,44 +63,6 @@ public class Items {
 	public String getName() {
 		return name;
 	}
-	public void deleteItem(String dltName) {
-		
-		String dlt = dltName;
-		System.out.println(dlt + "will be deleted");
-		int c = 0, track, cnt = 0, temp = 0;
-		try {
-			Scanner sc = new Scanner(new FileInputStream("item.txt"));
-			while (sc.hasNextLine()) {
-				cnt++;
-				sc.nextLine();
-			}
-			itemName = new String[cnt];
-			sc.close();
-			sc = new Scanner(new FileInputStream("item.txt"));
-			while (sc.hasNextLine()) {
-				itemName[c] = sc.nextLine();
-				if (itemName[c].equalsIgnoreCase(dlt)) {
-					temp = c;
-					System.out.println("Index will be deleted" + c);
-				}
-				c++;
-			}
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		try {
-			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
-			for (int i = 0; i < c; i++) {
-				if (i == temp || i == temp + 1 || i == temp + 2) {
-				} else {
-					pw.println(itemName[i]);
-				}
-			}
-			System.out.println("Your item has been deleted.");
-			pw.close();
-		} catch (Exception e) {
-		}
-	}
 	
 	public void setSrchName(String srchName) {
         this.srchName = srchName;
@@ -123,8 +85,8 @@ public class Items {
     public String getQuantity() {
         return quantity;
     }
-
-    public void modifyItem(String srcName, String modName,String modPrice,String modQuantity) {
+    @Override
+    public void modify(String srcName, String modName,String modPrice,String modQuantity) {
     	
     	this.srchName=srcName;
         this.name=modName;
@@ -183,7 +145,7 @@ public class Items {
 	}
     
     
-    //@Override
+    @Override
 	public void insert(String Name, String Price, String Quantity) {
 		try {
 			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt", true));
@@ -199,4 +161,46 @@ public class Items {
 
 	}
     
+    @Override
+	public void delete(String dltName) {
+
+		String dlt = dltName;
+		System.out.println(dlt + "will be deleted");
+		int c = 0, track, cnt = 0, temp = 0;
+		try {
+			Scanner sc = new Scanner(new FileInputStream("item.txt"));
+			while (sc.hasNextLine()) {
+				cnt++;
+				sc.nextLine();
+			}
+			itemName = new String[cnt];
+			sc.close();
+			sc = new Scanner(new FileInputStream("item.txt"));
+			while (sc.hasNextLine()) {
+				itemName[c] = sc.nextLine();
+				if (itemName[c].equalsIgnoreCase(dlt)) {
+					temp = c;
+					System.out.println("Index will be deleted" + c);
+				}
+				c++;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		try {
+			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
+			for (int i = 0; i < c; i++) {
+				if (i == temp || i == temp + 1 || i == temp + 2) {
+				} else {
+					pw.println(itemName[i]);
+				}
+			}
+			System.out.println("Your item has been deleted.");
+			pw.close();
+		} catch (Exception e) {
+		}
+	}
+
+	
+
 }

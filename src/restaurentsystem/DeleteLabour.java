@@ -123,7 +123,7 @@ public class DeleteLabour extends javax.swing.JFrame {
 	private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltButtonActionPerformed
 		dltID = dlttext.getText();
 		
-		labours.deleteLabour(dltID);
+		labours.delete(dltID);
 		dlttext.setText("");
 		JOptionPane.showMessageDialog(this, "Labour has been Deleted");
 		labours = new Labours();

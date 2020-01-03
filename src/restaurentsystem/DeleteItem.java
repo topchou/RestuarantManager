@@ -158,7 +158,7 @@ public class DeleteItem extends javax.swing.JFrame {
     private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dltButtonActionPerformed
         
         dltName=dlttext.getText();
-        items.deleteItem(dltName);
+        items.delete(dltName);
         JOptionPane.showMessageDialog(this, "Item has been removed");
         dlttext.setText("");
         items = new Items();

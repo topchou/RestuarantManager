@@ -4,11 +4,11 @@ public class Management extends javax.swing.JFrame{
 	/*
 	 * Create new form for ItemManagement and LabourManagement
     }*/
-	public Management(String Text) {
-        initComponents(Text);
+	public Management(String Target) {
+        initComponents(Target);
     }
 	
-	public void initComponents(String Text) {
+	public void initComponents(String Target) {
 
 		  
     	secondLayerPanel = new javax.swing.JPanel();
@@ -30,31 +30,31 @@ public class Management extends javax.swing.JFrame{
         backgroundPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         backgroundPanel.setForeground(new java.awt.Color(0, 0, 255));
 
-        addButton.setText("Add "+Text);
+        addButton.setText("Add "+Target);
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt,Text);
+                addButtonActionPerformed(evt,Target);
             }
         });
 
-        viewButton.setText("View "+Text);
+        viewButton.setText("View "+Target);
         viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewButtonActionPerformed(evt,Text);
+                viewButtonActionPerformed(evt,Target);
             }
         });
 
-        deleteButton.setText("Delete "+Text);
+        deleteButton.setText("Delete "+Target);
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteButtonActionPerformed(evt,Text);
+                deleteButtonActionPerformed(evt,Target);
             }
         });
 
-        modifyButton.setText("Modify "+Text);
+        modifyButton.setText("Modify "+Target);
         modifyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyButtonActionPerformed(evt,Text);
+                modifyButtonActionPerformed(evt,Target);
             }
         });
 
@@ -137,8 +137,8 @@ public class Management extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
 	
-	public void modifyButtonActionPerformed(java.awt.event.ActionEvent evt,String Text) {//GEN-FIRST:event_modifyButtonActionPerformed
-        switch(Text) {
+	public void modifyButtonActionPerformed(java.awt.event.ActionEvent evt,String Target) {//GEN-FIRST:event_modifyButtonActionPerformed
+        switch(Target) {
         	case "Item":
         		ModifyItem mi = new ModifyItem();
         		mi.setVisible(true);
@@ -153,8 +153,8 @@ public class Management extends javax.swing.JFrame{
         }
         
 	}//GEN-LAST:event_modifyButtonActionPerformed
-	private void addButtonActionPerformed(java.awt.event.ActionEvent evt,String Text) {//GEN-FIRST:event_addButtonActionPerformed
-		switch(Text) {
+	private void addButtonActionPerformed(java.awt.event.ActionEvent evt,String Target) {//GEN-FIRST:event_addButtonActionPerformed
+		switch(Target) {
     		case "Item":
     			InsertItem addi = new InsertItem();
     			addi.setVisible(true);
@@ -169,8 +169,8 @@ public class Management extends javax.swing.JFrame{
         
     }//GEN-LAST:event_addButtonActionPerformed
 	
-	private void viewButtonActionPerformed(java.awt.event.ActionEvent evt,String Text) {//GEN-FIRST:event_viewButtonActionPerformed
-		switch(Text) {
+	private void viewButtonActionPerformed(java.awt.event.ActionEvent evt,String Target) {//GEN-FIRST:event_viewButtonActionPerformed
+		switch(Target) {
     		case "Item":
     			ViewItem vm = new ViewItem();
     			vm.setVisible(true);
@@ -184,8 +184,8 @@ public class Management extends javax.swing.JFrame{
 		}
     }//GEN-LAST:event_viewButtonActionPerformed
 	
-	private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt,String Text) {//GEN-FIRST:event_deleteButtonActionPerformed
-		switch(Text) {
+	private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt,String Target) {//GEN-FIRST:event_deleteButtonActionPerformed
+		switch(Target) {
     		case "Item":
     			DeleteItem d= new DeleteItem();
     			d.setVisible(true);

@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Labours {
+public class Labours implements ManageTarget{
 	private Scanner scan;
 	private String ID;
 	private String Name;
@@ -63,51 +63,7 @@ public class Labours {
 		return ID;
 	}
 
-	public void deleteLabour(String dltID) {
-
-		String dlt = dltID;
-		System.out.println(dlt + "will be deleted");
-		int c = 0, track, cnt = 0, temp = 0;
-
-		try {
-			Scanner sc = new Scanner(new FileInputStream("labour.txt"));
-			while (sc.hasNextLine()) {
-				cnt++;
-				sc.nextLine();
-
-			}
-			itemName = new String[cnt];
-			sc.close();
-			sc = new Scanner(new FileInputStream("labour.txt"));
-			while (sc.hasNextLine()) {
-				itemName[c] = sc.nextLine();
-				if (itemName[c].equalsIgnoreCase(dlt)) {
-					temp = c;
-					System.out.println("Index will be deleted" + c);
-				}
-				c++;
-
-			}
-
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-
-		try {
-			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
-			for (int i = 0; i < c; i++) {
-				if (i == temp || i == temp + 1 || i == temp + 2) {
-				} else {
-					pw.println(itemName[i]);
-				}
-
-			}
-			System.out.println("Your item has been deleted.");
-			pw.close();
-		} catch (Exception e) {
-		}
-
-	}
+	
 
 	public void setSrchID(String srchID) {
 		this.srchID = srchID;
@@ -132,8 +88,9 @@ public class Labours {
     public String getSalary() {
         return Salary;
     }
-    //public void ModifyItem(String srcName, String ID,String Name,String Salary) {
-	public void ModifyItem(String srcID, String ID,String Name,String Salary) {
+    
+    @Override
+	public void modify(String srcID, String ID, String Name, String Salary) {
 
 		String srcKey = srcID;
 
@@ -185,8 +142,8 @@ public class Labours {
 		}
 
 	}
-    
-	//@Override
+
+	@Override
 	public void insert(String ID, String Name, String Salary) {
 			try {
 				PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt",true));
@@ -202,4 +159,51 @@ public class Labours {
 
     
 }
+
+	@Override
+	public void delete(String dltID) {
+
+		String dlt = dltID;
+		System.out.println(dlt + "will be deleted");
+		int c = 0, track, cnt = 0, temp = 0;
+
+		try {
+			Scanner sc = new Scanner(new FileInputStream("labour.txt"));
+			while (sc.hasNextLine()) {
+				cnt++;
+				sc.nextLine();
+
+			}
+			itemName = new String[cnt];
+			sc.close();
+			sc = new Scanner(new FileInputStream("labour.txt"));
+			while (sc.hasNextLine()) {
+				itemName[c] = sc.nextLine();
+				if (itemName[c].equalsIgnoreCase(dlt)) {
+					temp = c;
+					System.out.println("Index will be deleted" + c);
+				}
+				c++;
+
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
+		try {
+			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
+			for (int i = 0; i < c; i++) {
+				if (i == temp || i == temp + 1 || i == temp + 2) {
+				} else {
+					pw.println(itemName[i]);
+				}
+
+			}
+			System.out.println("Your item has been deleted.");
+			pw.close();
+		} catch (Exception e) {
+		}
+
+	}
 }
