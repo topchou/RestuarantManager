@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Shahin
  */
-public class InserLabour extends javax.swing.JFrame implements Insert{
+public class InserLabour extends javax.swing.JFrame {
 
     /**
      * Creates new form InserLabour
@@ -118,7 +118,17 @@ public class InserLabour extends javax.swing.JFrame implements Insert{
     }// </editor-fold>//GEN-END:initComponents
 
     private void insertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        insert();
+        
+        String ID = idText.getText();
+        String Name = nameText.getText();
+        String Salary = salaryText.getText();
+    	labour = new Labours();
+    	labour.insert(ID, Name, Salary);
+    	//insert();
+    	idText.setText("");
+        nameText.setText("");
+        salaryText.setText("");
+        JOptionPane.showMessageDialog(this, "Item has been added");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -127,7 +137,7 @@ public class InserLabour extends javax.swing.JFrame implements Insert{
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
-    @Override
+    /*@Override
     public void insert() {
     	 try {
     		 PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt",true));
@@ -153,7 +163,7 @@ public class InserLabour extends javax.swing.JFrame implements Insert{
          salaryText.setText("");
          JOptionPane.showMessageDialog(this, "Item has been added");
     }
-
+*/
     /**
      * @param args the command line arguments
      */
@@ -198,5 +208,6 @@ public class InserLabour extends javax.swing.JFrame implements Insert{
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField nameText;
     private javax.swing.JTextField salaryText;
+    private Labours labour;
     // End of variables declaration//GEN-END:variables
 }

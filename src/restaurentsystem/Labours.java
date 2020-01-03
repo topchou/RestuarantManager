@@ -6,9 +6,7 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
-public class Items {
+public class Labours {
 	private Scanner scan;
 	private String name;
 	private String price;
@@ -17,19 +15,20 @@ public class Items {
 	private String itemName[];
 	private String srchName;
 	
-	public Items() {
+	public Labours() {
 		fullnames = new StringBuilder();
 		openFile();
 		readFile();
 		closeFile();
 	}
-	
+
 	public StringBuilder getFullNames() {
 		return fullnames;
 	}
+
 	private void openFile() {
 		try {
-			scan = new Scanner(new File("item.txt"));
+			scan = new Scanner(new File("labour.txt"));
 			System.out.println("File found!");
 		}
 
@@ -46,10 +45,10 @@ public class Items {
 				quantity = scan.nextLine();
 				fullnames.append(name + " \t" + price + " \t" + quantity + "\n");
 			}
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
 	}
 
 	private void closeFile() {
@@ -63,20 +62,23 @@ public class Items {
 	public String getName() {
 		return name;
 	}
-	public void deleteItem(String dltName) {
-		//String dlt = getName();
-		String dlt = dltName;
+
+	public void deleteItem() {
+
+		String dlt = getName();
 		System.out.println(dlt + "will be deleted");
 		int c = 0, track, cnt = 0, temp = 0;
+
 		try {
-			Scanner sc = new Scanner(new FileInputStream("item.txt"));
+			Scanner sc = new Scanner(new FileInputStream("labour.txt"));
 			while (sc.hasNextLine()) {
 				cnt++;
 				sc.nextLine();
+
 			}
 			itemName = new String[cnt];
 			sc.close();
-			sc = new Scanner(new FileInputStream("item.txt"));
+			sc = new Scanner(new FileInputStream("labour.txt"));
 			while (sc.hasNextLine()) {
 				itemName[c] = sc.nextLine();
 				if (itemName[c].equalsIgnoreCase(dlt)) {
@@ -84,34 +86,37 @@ public class Items {
 					System.out.println("Index will be deleted" + c);
 				}
 				c++;
+
 			}
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+
 		try {
-			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
+			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
 			for (int i = 0; i < c; i++) {
 				if (i == temp || i == temp + 1 || i == temp + 2) {
 				} else {
 					pw.println(itemName[i]);
 				}
+
 			}
 			System.out.println("Your item has been deleted.");
 			pw.close();
 		} catch (Exception e) {
 		}
+
 	}
-	
-	public void setSrchName(String srchName) {
-        this.srchName = srchName;
-    }
 
 	public String getSrchName() {
-	        return srchName;
-	    }
-    public void setPrice(String price) {
+        return srchName;
+    }
+
+	public void setPrice(String price) {
         this.price = price;
     }
+    
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
@@ -123,14 +128,9 @@ public class Items {
     public String getQuantity() {
         return quantity;
     }
+    
+	public void ModifyItem() {
 
-    public void modifyItem(String srcName, String modName,String modPrice,String modQuantity) {
-    	
-    	this.srchName=srcName;
-        this.name=modName;
-        this.price=modPrice;        
-        this.quantity=modQuantity;
-    	
 		String srcKey = getSrchName();
 
 		System.out.println(srcKey + "will be modified");
@@ -138,7 +138,7 @@ public class Items {
 		int c = 0, track, cnt = 0, temp = 0;
 
 		try {
-			Scanner sc = new Scanner(new FileInputStream("item.txt"));
+			Scanner sc = new Scanner(new FileInputStream("labour.txt"));
 			while (sc.hasNextLine()) {
 				cnt++;
 				sc.nextLine();
@@ -146,7 +146,7 @@ public class Items {
 			}
 			itemName = new String[cnt];
 			sc.close();
-			sc = new Scanner(new FileInputStream("item.txt"));
+			sc = new Scanner(new FileInputStream("labour.txt"));
 			while (sc.hasNextLine()) {
 				itemName[c] = sc.nextLine();
 				if (itemName[c].equalsIgnoreCase(srcKey)) {
@@ -163,7 +163,7 @@ public class Items {
 		}
 
 		try {
-			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
+			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
 			for (int i = 0; i < c; i++) {
 				if (i == temp || i == temp + 1 || i == temp + 2) {
 					pw.println(getName());
@@ -182,21 +182,20 @@ public class Items {
 
 	}
     
+	//@Override
+	public void insert(String ID, String Name, String Salary) {
+			try {
+				PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt",true));
+			
+				pw.println(ID);
+				pw.println(Name);
+				pw.println(Salary);
+				pw.close();
+
+			} catch (Exception e) {
+
+			}
+
     
-    //@Override
-	public void insert(String Name, String Price, String Quantity) {
-		try {
-			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt", true));
-
-			pw.println(Name);
-			pw.println(Price);
-			pw.println(Quantity);
-			pw.close();
-
-		} catch (Exception e) {
-
-		}
-
-	}
-    
+}
 }
