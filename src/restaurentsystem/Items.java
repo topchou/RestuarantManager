@@ -64,7 +64,7 @@ public class Items {
 		return name;
 	}
 	public void deleteItem(String dltName) {
-		//String dlt = getName();
+		
 		String dlt = dltName;
 		System.out.println(dlt + "will be deleted");
 		int c = 0, track, cnt = 0, temp = 0;

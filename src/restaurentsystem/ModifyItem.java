@@ -17,8 +17,8 @@ import javax.swing.JOptionPane;
  * @author Shahin
  */
 public class ModifyItem extends javax.swing.JFrame {
-    //private MdfItem m;
-	private Items m;
+    
+	private Items items;
     private String srcName;
     private String modName;
     private String modPrice;
@@ -40,7 +40,7 @@ public class ModifyItem extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
        private void performFileRelatedTask()
     {
-        m = new Items();
+    	items = new Items();
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -166,8 +166,8 @@ public class ModifyItem extends javax.swing.JFrame {
 
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         // TODO add your handling code here:
-        m = new Items();
-        showItems.setText(m.getFullNames().toString());
+    	items = new Items();
+        showItems.setText(items.getFullNames().toString());
         
 
     }//GEN-LAST:event_viewActionPerformed
@@ -180,15 +180,15 @@ public class ModifyItem extends javax.swing.JFrame {
         modPrice =mPrice.getText();
         modQuantity=mQuantity.getText();
         
-        m.modifyItem(srcName, modName, modPrice, modQuantity);
+        items.modifyItem(srcName, modName, modPrice, modQuantity);
         
         modText.setText("");
         mName.setText("");
         mPrice.setText("");
         mQuantity.setText("");
         JOptionPane.showMessageDialog(this, "Item has been Modified");
-        m = new Items();
-        showItems.setText(m.getFullNames().toString());
+        items = new Items();
+        showItems.setText(items.getFullNames().toString());
 
     }//GEN-LAST:event_modifyButtonActionPerformed
 

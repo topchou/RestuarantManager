@@ -13,7 +13,7 @@ public class Labours {
 	private String Salary;
 	private StringBuilder fullnames;
 	private String itemName[];
-	private String srchName;
+	private String srchID;
 	
 	public Labours() {
 		fullnames = new StringBuilder();
@@ -109,8 +109,12 @@ public class Labours {
 
 	}
 
-	public String getSrchName() {
-        return srchName;
+	public void setSrchID(String srchID) {
+		this.srchID = srchID;
+	}
+	
+	public String getSrchID() {
+        return srchID;
     }
 
 	public void setName(String Name) {
@@ -128,10 +132,10 @@ public class Labours {
     public String getSalary() {
         return Salary;
     }
-    
-	public void ModifyItem() {
+    //public void ModifyItem(String srcName, String ID,String Name,String Salary) {
+	public void ModifyItem(String srcID, String ID,String Name,String Salary) {
 
-		String srcKey = getSrchName();
+		String srcKey = srcID;
 
 		System.out.println(srcKey + "will be modified");
 
@@ -166,9 +170,9 @@ public class Labours {
 			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
 			for (int i = 0; i < c; i++) {
 				if (i == temp || i == temp + 1 || i == temp + 2) {
-					pw.println(getID());
-					pw.println(getName());
-					pw.println(getSalary());
+					pw.println(ID);
+					pw.println(Name);
+					pw.println(Salary);
 					i += 2;
 				} else {
 					pw.println(itemName[i]);
