@@ -63,8 +63,9 @@ public class Items {
 	public String getName() {
 		return name;
 	}
-	public void deleteItem() {
-		String dlt = getName();
+	public void deleteItem(String dltName) {
+		//String dlt = getName();
+		String dlt = dltName;
 		System.out.println(dlt + "will be deleted");
 		int c = 0, track, cnt = 0, temp = 0;
 		try {
@@ -123,8 +124,13 @@ public class Items {
         return quantity;
     }
 
-    public void modifyItem() {
-
+    public void modifyItem(String srcName, String modName,String modPrice,String ModQuantity) {
+    	
+    	this.srchName=srcName;
+        this.name=modName;
+        this.price=modPrice;        
+        this.quantity=ModQuantity;
+    	
 		String srcKey = getSrchName();
 
 		System.out.println(srcKey + "will be modified");
@@ -176,27 +182,24 @@ public class Items {
 
 	}
     
-    public void insert() {
+    
+    //@Override
+    public void insert(String Name, String Price, String Quantity) {
     	try {
             PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt",true));
             
-/*            String itemName = name.getText();
-            String itemPrice = price.getText();
-            String itemQuantity = quantity.getText();
+
             
-            pw.println(getName);
-            pw.println(getPrice);
-            pw.println(getQuantity);
-            pw.close();*/
+            pw.println(Name);
+            pw.println(Price);
+            pw.println(Quantity);
+            pw.close();
            
         }
    	 catch(Exception e){
             
         }
-/*        name.setText("");
-        price.setText("");
-        quantity.setText("");
-        JOptionPane.showMessageDialog(this, "Item has been added");*/
+
     }
     
 }

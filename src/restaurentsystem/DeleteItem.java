@@ -41,7 +41,7 @@ public class DeleteItem extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        text = new javax.swing.JTextArea();
+        showItems = new javax.swing.JTextArea();
         dlttext = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
@@ -57,11 +57,11 @@ public class DeleteItem extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
-        text.setEditable(false);
-        text.setBackground(new java.awt.Color(204, 255, 204));
-        text.setColumns(20);
-        text.setRows(5);
-        jScrollPane1.setViewportView(text);
+        showItems.setEditable(false);
+        showItems.setBackground(new java.awt.Color(204, 255, 204));
+        showItems.setColumns(20);
+        showItems.setRows(5);
+        jScrollPane1.setViewportView(showItems);
 
         jLabel1.setText("Which Item You want to Delete");
 
@@ -151,7 +151,7 @@ public class DeleteItem extends javax.swing.JFrame {
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         // TODO add your handling code here:
             d = new Items();
-            text.setText(d.getFullNames().toString());
+            showItems.setText(d.getFullNames().toString());
         
         
     }//GEN-LAST:event_viewActionPerformed
@@ -160,11 +160,12 @@ public class DeleteItem extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         dltName=dlttext.getText();
-        d.setName(dltName);
-        d.deleteItem();
+        //d.setName(dltName);
+        d.deleteItem(dltName);
         JOptionPane.showMessageDialog(this, "Item has been removed");
+        dlttext.setText("");
         d = new Items();
-        text.setText(d.getFullNames().toString());
+        showItems.setText(d.getFullNames().toString());
         
         
     }//GEN-LAST:event_dltButtonActionPerformed
@@ -220,7 +221,7 @@ public class DeleteItem extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea text;
+    private javax.swing.JTextArea showItems;
     private javax.swing.JButton view;
     // End of variables declaration//GEN-END:variables
 }

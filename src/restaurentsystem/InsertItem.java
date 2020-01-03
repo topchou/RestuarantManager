@@ -13,7 +13,7 @@ import javax.swing.*;
  *
  * @author Shahin
  */
-public class InsertItem extends javax.swing.JFrame implements Insert{
+public class InsertItem extends javax.swing.JFrame {
     
     /**
      * Creates new form InsertItem
@@ -45,11 +45,8 @@ public class InsertItem extends javax.swing.JFrame implements Insert{
         setBackground(new java.awt.Color(0, 153, 204));
 
         jLabel1.setText("Item Name");
-
         jLabel2.setText("Item Price");
-
         jLabel3.setText("Item Quantity");
-
         insertButton.setText("Insert");
         insertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,39 +120,24 @@ public class InsertItem extends javax.swing.JFrame implements Insert{
     }// </editor-fold>//GEN-END:initComponents
 
     private void insertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    	insert();
+    	String Name = name.getText();
+        String Price = price.getText();
+        String Quantity = quantity.getText();
+        item= new Items();
+    	item.insert(Name,Price,Quantity);
+    	name.setText("");
+        price.setText("");
+        quantity.setText("");
+        JOptionPane.showMessageDialog(this, "Item has been added");
     }//GEN-LAST:event_jButton1ActionPerformed
     
-   
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         Management im = new Management("Item");
         im.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
     
-    @Override
-    public void insert() {
-    	 try {
-             PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt",true));
-             
-             String itemName = name.getText();
-             String itemPrice = price.getText();
-             String itemQuantity = quantity.getText();
-             
-             pw.println(itemName);
-             pw.println(itemPrice);
-             pw.println(itemQuantity);
-             pw.close();
-            
-         }
-    	 catch(Exception e){
-             
-         }
-         name.setText("");
-         price.setText("");
-         quantity.setText("");
-         JOptionPane.showMessageDialog(this, "Item has been added");
-    }
+  
 
     /**
      * @param args the command line arguments
@@ -171,5 +153,6 @@ public class InsertItem extends javax.swing.JFrame implements Insert{
     private javax.swing.JTextField name;
     private javax.swing.JTextField price;
     private javax.swing.JTextField quantity;
+    private Items item;
     // End of variables declaration//GEN-END:variables
 }

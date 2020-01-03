@@ -22,12 +22,9 @@ Chom Chom
 Roti naan
 9
 48
-Roti Telur
-2.70
-27
-banana
-10
-33
+hello
+22
+22
 
 
 

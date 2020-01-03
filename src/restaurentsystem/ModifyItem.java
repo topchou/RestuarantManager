@@ -22,7 +22,7 @@ public class ModifyItem extends javax.swing.JFrame {
     private String srcName;
     private String modName;
     private String modPrice;
-    private String ModQuantity;
+    private String modQuantity;
     
     /**
      * Creates new form ModifyItem
@@ -46,7 +46,7 @@ public class ModifyItem extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        text = new javax.swing.JTextArea();
+        showItems = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         modText = new javax.swing.JTextField();
         view = new javax.swing.JButton();
@@ -62,10 +62,10 @@ public class ModifyItem extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 255));
 
-        text.setEditable(false);
-        text.setColumns(20);
-        text.setRows(5);
-        jScrollPane1.setViewportView(text);
+        showItems.setEditable(false);
+        showItems.setColumns(20);
+        showItems.setRows(5);
+        jScrollPane1.setViewportView(showItems);
 
         jLabel1.setText("Which item name want to Modify");
 
@@ -167,7 +167,7 @@ public class ModifyItem extends javax.swing.JFrame {
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         // TODO add your handling code here:
         m = new Items();
-        text.setText(m.getFullNames().toString());
+        showItems.setText(m.getFullNames().toString());
         
 
     }//GEN-LAST:event_viewActionPerformed
@@ -176,21 +176,19 @@ public class ModifyItem extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         srcName=modText.getText();
-        m.setSrchName(srcName);
         modName= mName.getText();
-        m.setName(modName);
         modPrice =mPrice.getText();
-        m.setPrice(modPrice);
-        ModQuantity=mQuantity.getText();
-        m.setQuantity(ModQuantity);
-        m.modifyItem();
+        modQuantity=mQuantity.getText();
+        
+        m.modifyItem(srcName, modName, modPrice, modQuantity);
+        
         modText.setText("");
         mName.setText("");
         mPrice.setText("");
         mQuantity.setText("");
         JOptionPane.showMessageDialog(this, "Item has been Modified");
         m = new Items();
-        text.setText(m.getFullNames().toString());
+        showItems.setText(m.getFullNames().toString());
 
     }//GEN-LAST:event_modifyButtonActionPerformed
 
@@ -247,7 +245,7 @@ public class ModifyItem extends javax.swing.JFrame {
     private javax.swing.JTextField mQuantity;
     private javax.swing.JTextField modText;
     private javax.swing.JButton modifyButton;
-    private javax.swing.JTextArea text;
+    private javax.swing.JTextArea showItems;
     private javax.swing.JButton view;
     // End of variables declaration//GEN-END:variables
 }
