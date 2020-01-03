@@ -63,9 +63,9 @@ public class Labours {
 		return ID;
 	}
 
-	public void deleteItem() {
+	public void deleteLabour(String dltID) {
 
-		String dlt = getID();
+		String dlt = dltID;
 		System.out.println(dlt + "will be deleted");
 		int c = 0, track, cnt = 0, temp = 0;
 

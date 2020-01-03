@@ -157,10 +157,8 @@ public class DeleteItem extends javax.swing.JFrame {
     }//GEN-LAST:event_viewActionPerformed
 
     private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dltButtonActionPerformed
-        // TODO add your handling code here:
         
         dltName=dlttext.getText();
-        //d.setName(dltName);
         d.deleteItem(dltName);
         JOptionPane.showMessageDialog(this, "Item has been removed");
         dlttext.setText("");
