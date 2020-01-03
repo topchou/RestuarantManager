@@ -17,8 +17,8 @@ import javax.swing.JOptionPane;
  * @author Shahin
  */
 public class DeleteLabour extends javax.swing.JFrame {
-	//private DltLabour d;
-	private Labours labour;
+	
+	private Labours labours;
 	private String dltID;
 
 	/**
@@ -30,7 +30,7 @@ public class DeleteLabour extends javax.swing.JFrame {
 	}
 
 	private void performFileRelatedTask() {
-		labour = new Labours();
+		labours = new Labours();
 	}
 
 	/**
@@ -123,11 +123,11 @@ public class DeleteLabour extends javax.swing.JFrame {
 	private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltButtonActionPerformed
 		dltID = dlttext.getText();
 		
-		labour.deleteLabour(dltID);
+		labours.deleteLabour(dltID);
 		dlttext.setText("");
 		JOptionPane.showMessageDialog(this, "Labour has been Deleted");
-		labour = new Labours();
-		text.setText(labour.getFullNames().toString());
+		labours = new Labours();
+		text.setText(labours.getFullNames().toString());
 	}// GEN-LAST:event_dltButtonActionPerformed
 
 	private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_backButtonActionPerformed
@@ -138,8 +138,8 @@ public class DeleteLabour extends javax.swing.JFrame {
 	}// GEN-LAST:event_backButtonActionPerformed
 
 	private void viewActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_viewActionPerformed
-		labour = new Labours();
-		text.setText(labour.getFullNames().toString());
+		labours = new Labours();
+		text.setText(labours.getFullNames().toString());
 
 	}// GEN-LAST:event_viewActionPerformed
 

@@ -17,8 +17,8 @@ import javax.swing.JOptionPane;
  * @author Shahin
  */
 public class DeleteItem extends javax.swing.JFrame {
-    //private DltItem d;
-    private Items d;
+    
+    private Items items;
     private String dltName;
     /**
      * Creates new form DeleteItem
@@ -146,12 +146,11 @@ public class DeleteItem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private void performFileRelatedTask()
     {
-        d = new Items();
+    	items = new Items();
     }
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
-        // TODO add your handling code here:
-            d = new Items();
-            showItems.setText(d.getFullNames().toString());
+    	items = new Items();
+        showItems.setText(items.getFullNames().toString());
         
         
     }//GEN-LAST:event_viewActionPerformed
@@ -159,11 +158,11 @@ public class DeleteItem extends javax.swing.JFrame {
     private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dltButtonActionPerformed
         
         dltName=dlttext.getText();
-        d.deleteItem(dltName);
+        items.deleteItem(dltName);
         JOptionPane.showMessageDialog(this, "Item has been removed");
         dlttext.setText("");
-        d = new Items();
-        showItems.setText(d.getFullNames().toString());
+        items = new Items();
+        showItems.setText(items.getFullNames().toString());
         
         
     }//GEN-LAST:event_dltButtonActionPerformed
