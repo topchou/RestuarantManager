@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class Labours {
 	private Scanner scan;
-	private String name;
-	private String price;
-	private String quantity;
+	private String ID;
+	private String Name;
+	private String Salary;
 	private StringBuilder fullnames;
 	private String itemName[];
 	private String srchName;
@@ -40,10 +40,10 @@ public class Labours {
 	private void readFile() {
 		try {
 			while (scan.hasNextLine()) {
-				name = scan.nextLine();
-				price = scan.nextLine();
-				quantity = scan.nextLine();
-				fullnames.append(name + " \t" + price + " \t" + quantity + "\n");
+				ID = scan.nextLine();
+				Name = scan.nextLine();
+				Salary = scan.nextLine();
+				fullnames.append(ID + " \t" + Name + " \t" + Salary + "\n");
 			}
 
 		} catch (Exception e) {
@@ -55,17 +55,17 @@ public class Labours {
 		scan.close();
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setID(String ID) {
+		this.ID = ID;
 	}
 
-	public String getName() {
-		return name;
+	public String getID() {
+		return ID;
 	}
 
 	public void deleteItem() {
 
-		String dlt = getName();
+		String dlt = getID();
 		System.out.println(dlt + "will be deleted");
 		int c = 0, track, cnt = 0, temp = 0;
 
@@ -113,20 +113,20 @@ public class Labours {
         return srchName;
     }
 
-	public void setPrice(String price) {
-        this.price = price;
+	public void setName(String Name) {
+        this.Name = Name;
     }
     
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setSalary(String Salary) {
+        this.Salary = Salary;
     }
     
-    public String getPrice() {
-        return price;
+    public String getName() {
+        return Name;
     }
     
-    public String getQuantity() {
-        return quantity;
+    public String getSalary() {
+        return Salary;
     }
     
 	public void ModifyItem() {
@@ -166,9 +166,9 @@ public class Labours {
 			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
 			for (int i = 0; i < c; i++) {
 				if (i == temp || i == temp + 1 || i == temp + 2) {
+					pw.println(getID());
 					pw.println(getName());
-					pw.println(getPrice());
-					pw.println(getQuantity());
+					pw.println(getSalary());
 					i += 2;
 				} else {
 					pw.println(itemName[i]);

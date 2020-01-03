@@ -137,33 +137,8 @@ public class InserLabour extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
-    /*@Override
-    public void insert() {
-    	 try {
-    		 PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt",true));
-             System.out.println("file created");
-             String itemName = idText.getText();
+    
 
-             String itemPrice = nameText.getText();
-
-             String itemQuantity = salaryText.getText();
-
-             pw.println(itemName);
-             pw.println(itemPrice);
-             pw.println(itemQuantity);
-
-             pw.close();
-            
-         }
-    	 catch(Exception e){
-             
-         }
-    	 idText.setText("");
-         nameText.setText("");
-         salaryText.setText("");
-         JOptionPane.showMessageDialog(this, "Item has been added");
-    }
-*/
     /**
      * @param args the command line arguments
      */

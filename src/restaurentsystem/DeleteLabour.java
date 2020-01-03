@@ -17,8 +17,9 @@ import javax.swing.JOptionPane;
  * @author Shahin
  */
 public class DeleteLabour extends javax.swing.JFrame {
-	private DltLabour d;
-	private String dltName;
+	//private DltLabour d;
+	private Labours labour;
+	private String dltID;
 
 	/**
 	 * Creates new form DeleteLabour
@@ -29,7 +30,7 @@ public class DeleteLabour extends javax.swing.JFrame {
 	}
 
 	private void performFileRelatedTask() {
-		d = new DltLabour();
+		labour = new Labours();
 	}
 
 	/**
@@ -120,13 +121,13 @@ public class DeleteLabour extends javax.swing.JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltButtonActionPerformed
-		// TODO add your handling code here:
-
-		dltName = dlttext.getText();
-		d.setName(dltName);
-		d.deleteItem();
+		dltID = dlttext.getText();
+		labour.setID(dltID);
+		labour.deleteItem();
 		dlttext.setText("");
 		JOptionPane.showMessageDialog(this, "Labour has been Deleted");
+		labour = new Labours();
+		text.setText(labour.getFullNames().toString());
 
 	}// GEN-LAST:event_dltButtonActionPerformed
 
@@ -138,9 +139,8 @@ public class DeleteLabour extends javax.swing.JFrame {
 	}// GEN-LAST:event_backButtonActionPerformed
 
 	private void viewActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_viewActionPerformed
-		// TODO add your handling code here:
-		d = new DltLabour();
-		text.setText(d.getFullNames().toString());
+		labour = new Labours();
+		text.setText(labour.getFullNames().toString());
 
 	}// GEN-LAST:event_viewActionPerformed
 
@@ -195,109 +195,8 @@ public class DeleteLabour extends javax.swing.JFrame {
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTextArea text;
 	private javax.swing.JButton view;
+	
 	// End of variables declaration//GEN-END:variables
 }
 
-class DltLabour {
-	private Scanner scan;
-	private String name;
-	private String price;
-	private String quantity;
-	private StringBuilder fullnames;
-	private String itemName[];
 
-	public DltLabour() {
-		fullnames = new StringBuilder();
-		openFile();
-		readFile();
-		closeFile();
-	}
-
-	public StringBuilder getFullNames() {
-		return fullnames;
-	}
-
-	private void openFile() {
-		try {
-			scan = new Scanner(new File("labour.txt"));
-			System.out.println("File found!");
-		}
-
-		catch (Exception e) {
-			System.out.println("File not found");
-		}
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	private void readFile() {
-		try {
-			while (scan.hasNextLine()) {
-				name = scan.nextLine();
-				price = scan.nextLine();
-				quantity = scan.nextLine();
-				fullnames.append(name + " \t" + price + " \t" + quantity + "\n");
-			}
-
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-	}
-
-	private void closeFile() {
-		scan.close();
-	}
-
-	public void deleteItem() {
-
-		String dlt = getName();
-		System.out.println(dlt + "will be deleted");
-		int c = 0, track, cnt = 0, temp = 0;
-
-		try {
-			Scanner sc = new Scanner(new FileInputStream("labour.txt"));
-			while (sc.hasNextLine()) {
-				cnt++;
-				sc.nextLine();
-
-			}
-			itemName = new String[cnt];
-			sc.close();
-			sc = new Scanner(new FileInputStream("labour.txt"));
-			while (sc.hasNextLine()) {
-				itemName[c] = sc.nextLine();
-				if (itemName[c].equalsIgnoreCase(dlt)) {
-					temp = c;
-					System.out.println("Index will be deleted" + c);
-				}
-				c++;
-
-			}
-
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-
-		try {
-			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
-			for (int i = 0; i < c; i++) {
-				if (i == temp || i == temp + 1 || i == temp + 2) {
-				} else {
-					pw.println(itemName[i]);
-				}
-
-			}
-			System.out.println("Your item has been deleted.");
-			pw.close();
-		} catch (Exception e) {
-		}
-
-	}
-
-}
