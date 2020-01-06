@@ -16,7 +16,17 @@ public class Items implements ManageTarget{
 	private StringBuilder fullnames;
 	private String itemName[];
 	private String srchName;
+	private int num=1;
+    private String s1,s2;
 	
+    private int cngQuantity;
+    private StringBuilder reciptName;
+    
+    public StringBuilder getReciptName()
+    {
+        return reciptName ;
+    }
+    
 	public Items() {
 		fullnames = new StringBuilder();
 		openFile();
@@ -44,7 +54,10 @@ public class Items implements ManageTarget{
 				name = scan.nextLine();
 				price = scan.nextLine();
 				quantity = scan.nextLine();
-				fullnames.append(name + " \t" + price + " \t" + quantity + "\n");
+				//fullnames.append(name + " \t" + price + " \t" + quantity + "\n");
+				fullnames.append(num+"\t"+name + " \t" + price + " \t"+quantity+"\n");
+	            num++;
+				
 			}
 		} catch (Exception e) {
 			System.out.println(e);

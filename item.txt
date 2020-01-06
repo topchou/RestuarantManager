@@ -3,7 +3,7 @@ Burger
 -5
 Fried rice
 5
-87
+80
 Nasi Goreng
 5
 38
@@ -25,6 +25,9 @@ Roti naan
 hello
 22
 22
+
+
+
 
 
 

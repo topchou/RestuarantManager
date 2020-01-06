@@ -17,18 +17,20 @@ import javax.swing.JOptionPane;
  * @author Shahin
  */
 public class OrderManagement extends javax.swing.JFrame {
-     private OrdrManagement o;
-     private ReciptFile r;
-    private String srcName;
-    private String modName;
-    private String modPrice;
-    private String ModQuantity;
-    private int pass;
-    protected BillManagement b;
-    private PrintWriter pw;
-    /**
-     * Creates new form OrderManagement
-     */
+	private OrdrManagement o;
+	private Items items;
+	private ReciptFile r;
+	private String srcName;
+	private String modName;
+	private String modPrice;
+	private String ModQuantity;
+	private int pass;
+	protected BillManagement b;
+	private PrintWriter pw;
+
+	/**
+	 * Creates new form OrderManagement
+	 */
     public OrderManagement() {
         initComponents();
         performFileRelatedTask();
@@ -48,7 +50,7 @@ public class OrderManagement extends javax.swing.JFrame {
         text = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         backButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        billButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
         view = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -89,10 +91,10 @@ public class OrderManagement extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Bill");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        billButton.setText("Bill");
+        billButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+            	billButtonActionPerformed(evt);
             }
         });
 
@@ -120,7 +122,7 @@ public class OrderManagement extends javax.swing.JFrame {
         checkButton.setText("New Item");
         checkButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkButtonActionPerformed(evt);
+                //checkButtonActionPerformed(evt);
             }
         });
 
@@ -172,7 +174,7 @@ public class OrderManagement extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(modifyButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(billButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(backButton)
                 .addGap(108, 108, 108))
@@ -190,7 +192,7 @@ public class OrderManagement extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(view)
                     .addComponent(modifyButton)
-                    .addComponent(jButton1)
+                    .addComponent(billButton)
                     .addComponent(backButton))
                 .addGap(23, 23, 23))
         );
@@ -201,20 +203,13 @@ public class OrderManagement extends javax.swing.JFrame {
         jScrollPane2.setViewportView(reciptArea);
 
         jLabel2.setText("Name");
-
         jLabel3.setText("Price");
-
         jLabel5.setText("Quantity");
-
         totalPriceField.setEditable(false);
         totalPriceField.setBackground(new java.awt.Color(255, 204, 51));
-
         jLabel6.setText("ID");
-
         jLabel8.setText("Price");
-
         jLabel7.setText("Quantity");
-
         jLabel10.setText("Name");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -297,23 +292,24 @@ public class OrderManagement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
      private void performFileRelatedTask()
     {
-        o = new OrdrManagement();
+        items = new Items();
        
     }
     
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
-            // TODO add your handling code here:
-            o = new OrdrManagement();
-            text.setText(o.getFullNames().toString());
-        
+		
+		items = new Items();
+		text.setText(items.getFullNames().toString());
+		
+
     }//GEN-LAST:event_viewActionPerformed
 
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
         
        // o.delete();
-        BillManagement b = new BillManagement();
+    /*    BillManagement b = new BillManagement();
         this.dispose();
-        b.setVisible(true);
+        b.setVisible(true);*/
         
     }//GEN-LAST:event_modifyButtonActionPerformed
 
@@ -324,12 +320,12 @@ public class OrderManagement extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void billButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             // TODO add your handling code here:
         
         b= new BillManagement();
         b.setVisible(true);
-          this.dispose();
+        this.dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
     
@@ -353,7 +349,7 @@ public class OrderManagement extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }
-    private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
+/*    private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
         // TODO add your handling code here:
         srcName=modText.getText(); //ID
        // o.setSrchName(srcName);
@@ -393,7 +389,7 @@ public class OrderManagement extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_checkButtonActionPerformed
-    }
+    }*/
     /**
      * @param args the command line arguments
      */
@@ -432,7 +428,7 @@ public class OrderManagement extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JButton checkButton;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton billButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -459,268 +455,5 @@ public class OrderManagement extends javax.swing.JFrame {
 
 
 
-class OrdrManagement {
-  //  protected OrderManagement o = new OrderManagement();
-    private Scanner scan;
-    private String srchName;
-private int num=1;
-   private String s1,s2;
 
-    private String name;
-    private int cngQuantity;
-    
-    private String price;
-    private String quantity;
-    private StringBuilder fullnames;
-    private String itemName [];
-    private StringBuilder reciptName;
-    public OrdrManagement()
-    {
-        fullnames = new StringBuilder();
-        openFile();
-        readFile();
-        
-        closeFile();
-        
-    }
-    
-    public StringBuilder getFullNames()
-    {
-        return fullnames;
-    }
-    public StringBuilder getReciptName()
-    {
-        return reciptName ;
-    }
-    private void openFile()
-    {
-        try
-        {
-            scan = new Scanner(new File("item.txt"));
-            System.out.println("File found!");
-        }
-        
-        catch(Exception e)
-        {
-            System.out.println("File not found");
-        }
-    }
-    
-    public void setSrchName(String srchName) {
-        this.srchName = srchName;
-    }
-     public String getSrchName() {
-        return srchName;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    public void setPrice(String price) {
-        this.price = price;
-    }
-    
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
-    
-    public String getPrice() {
-        return price;
-    }
-    
-    public String getQuantity() {
-        return quantity;
-    }
-    
-    
-    private void readFile()
-            
-    {
-        try{
-            while(scan.hasNextLine())
-        {
-            name = scan.nextLine();
-            price = scan.nextLine();
-            quantity=scan.nextLine();
-            fullnames.append(num+"\t"+name + " \t" + price + " \t"+quantity+"\n");
-            num++;
-        }
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
-    }
-    private void closeFile()
-    {
-        scan.close();
-    }
-    
-    public  void ModifyItem(){
-        String srcKey=getSrchName();
-        System.out.println(srcKey +" is going to be changed in quantity");
-        
-        System.out.println(srcKey+"will be modified");
-        
-        
-        int c=0,track, cnt=0,temp=0;
-        
-        try{
-            Scanner sc = new Scanner(new FileInputStream("item.txt"));
-            while(sc.hasNextLine()){
-                cnt++;
-                sc.nextLine();
-                
-            }
-            itemName= new String[cnt];
-            sc.close();
-            sc = new Scanner(new FileInputStream("item.txt"));
-            while(sc.hasNextLine()){
-                itemName[c]=sc.nextLine();
-                if(itemName[c].equalsIgnoreCase(srcKey)){
-                    temp=c;
-                    System.out.println("Index will be deleted" +c);
-                }
-                c++;
-                
-            }
-            
-            
-        }
-        catch(Exception e){
-            System.out.println(e);
-            
-        }
-        
-        try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
-            for (int i = 0; i < c; i++) {
-                if(i==temp+2){
-                    cngQuantity= Integer.decode(itemName[i]);
-                    
-                    cngQuantity=cngQuantity-Integer.decode(getQuantity());
-                    pw.println(cngQuantity);
-                    System.out.println("Value has been changed ");
-                    
-                }
-                else{
-                    pw.println(itemName[i]);
-                }
-                
-            }
-            System.out.println("Your item has been deleted.");
-            pw.close();
-        }
-        catch (Exception e) {
-        }
-        
-      
-    }
-    
-    public int checkQuantity(int n){
-        int i=1;
-        int quantity;
-        int count;
-         try{
-            Scanner sc = new Scanner(new FileInputStream("item.txt"));
-            while(sc.hasNextLine()){
-                if(i==n){
-                    sc.nextLine();sc.nextLine();
-                    quantity=Integer.decode(sc.nextLine());
-                    return quantity;
-                } else {
-                sc.nextLine();
-                sc.nextLine();
-                sc.nextLine();
-            }
-                i++;
-            }
-            sc.close();
-            }
-        catch(Exception e){
-            System.out.println(e);
-            
-        }
-         return 0;
-    }
-    public void temp(int n, int i) {
-        
-        try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream("temp.txt",true));
-            
-         Scanner sc = new Scanner(new FileInputStream("Item.txt"));
-            for(int j=1;sc.hasNextLine(); j++){
-                if (j==n){
-                 s1 = sc.nextLine();
-                 pw.println(s1);
-                 
-                 s2 = sc.nextLine();
-                 pw.println(i);
-                 sc.nextLine();
-                } else {sc.nextLine();sc.nextLine();sc.nextLine();}
-            }
-            sc.close();
-            pw.close();
-       /*         
-        
-        try {
-            PrintWriter pw = new PrintWriter(new FileOutputStream("temp.txt",true));
-            pw.println(s1);
-            pw.println(s2);
-            pw.close();
-            
-        } catch (Exception e) {
-            System.out.println("New File has been created with values ");
-        }
-               */
-        
-                    
-        } catch (Exception e) {}
-        //delete();
-    }
-    public void delete(){
-        String name ="";
-        String quantity="";
-        try {
-            Scanner sc= new Scanner(new FileInputStream("temp.txt"));
-            while(sc.hasNextLine()){
-                name=sc.nextLine();
-                quantity =sc.nextLine();
-                setSrchName(name);
-                setQuantity(quantity);
-                ModifyItem();
-                
-                
-            
-            }
-            System.out.println("End of reading temp file");
-            sc.close();
-        } catch (Exception e) {
-        }
-    
-    }
-    
-    public void readRecipt(){
-        
-        try{
-            Scanner sc = new Scanner(new FileInputStream("temp.txt"));
-            while(sc.hasNextLine())
-            {
-                name = sc.nextLine();
-                //price = scan.nextLine();
-                quantity=sc.nextLine(); // + " \t"+quantity+
-                reciptName.append(name + " \t" + quantity +"\n");
-            }
-          sc.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
-    }
-
-    
-    
-}
 
