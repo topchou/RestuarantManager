@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class ModifyItem extends javax.swing.JFrame {
     
 	private Items items;
-    private String srcName;
+    private int index;
     private String modName;
     private String modPrice;
     private String modQuantity;
@@ -175,12 +175,12 @@ public class ModifyItem extends javax.swing.JFrame {
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
         // TODO add your handling code here:
         
-        srcName=modText.getText();
+    	index=Integer.parseInt(modText.getText());
         modName= mName.getText();
         modPrice =mPrice.getText();
         modQuantity=mQuantity.getText();
         
-        items.modify(srcName, modName, modPrice, modQuantity);
+        items.modify(index, modName, modPrice, modQuantity);
         
         modText.setText("");
         mName.setText("");

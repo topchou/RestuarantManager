@@ -99,14 +99,9 @@ public class Items implements ManageTarget{
         return quantity;
     }
     @Override
-    public void modify(String srcName, String modName,String modPrice,String modQuantity) {
+    public void modify(int index, String modName,String modPrice,String modQuantity) {
     	
-    	this.srchName=srcName;
-        this.name=modName;
-        this.price=modPrice;        
-        this.quantity=modQuantity;
-    	
-		String srcKey = getSrchName();
+    	int srcKey = (index - 1) * 3;
 
 		System.out.println(srcKey + "will be modified");
 
@@ -124,9 +119,8 @@ public class Items implements ManageTarget{
 			sc = new Scanner(new FileInputStream("item.txt"));
 			while (sc.hasNextLine()) {
 				itemName[c] = sc.nextLine();
-				if (itemName[c].equalsIgnoreCase(srcKey)) {
-					temp = c;
-					System.out.println("Index will be deleted" + c);
+				if (c==srcKey) {
+					System.out.println("Index "+ c + " will be deleted" );
 				}
 				c++;
 
@@ -140,10 +134,10 @@ public class Items implements ManageTarget{
 		try {
 			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
 			for (int i = 0; i < c; i++) {
-				if (i == temp || i == temp + 1 || i == temp + 2) {
-					pw.println(getName());
-					pw.println(getPrice());
-					pw.println(getQuantity());
+				if (i == srcKey || i == srcKey + 1 || i == srcKey + 2) {
+					pw.println(modName);
+					pw.println(modPrice);
+					pw.println(modQuantity);
 					i += 2;
 				} else {
 					pw.println(itemName[i]);

@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class ModifyLabour extends javax.swing.JFrame {
     //private MdfLabour m;
-    private String srcID;
+    private int index;
     private String modID;
     private String modName;
     private String modSalary;
@@ -175,12 +175,12 @@ public class ModifyLabour extends javax.swing.JFrame {
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
         // TODO add your handling code here:
         
-        srcID=modText.getText();
+    	index=Integer.parseInt(modText.getText());
         modID= mID.getText();
         modName =mName.getText();
         modSalary=mSalary.getText();
 
-        labours.modify(srcID,modID,modName,modSalary);
+        labours.modify(index,modID,modName,modSalary);
         
         modText.setText("");
         mID.setText("");
