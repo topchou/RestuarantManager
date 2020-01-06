@@ -11,7 +11,7 @@
     </display>  
   </class>  
   <class id="2" language="java" name="restaurentsystem.ItemMngmnt" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/ItemMngmnt.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="353" width="283" x="934" y="-106"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -29,7 +29,7 @@
     </display>  
   </class>  
   <class id="4" language="java" name="restaurentsystem.LabourManagement" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/LabourManagement.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="335" width="283" x="2517" y="-106"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -101,7 +101,7 @@
     </display>  
   </class>  
   <class id="12" language="java" name="restaurentsystem.Names" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/ViewItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="245" width="181" x="340" y="1256"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -110,7 +110,7 @@
     </display>  
   </class>  
   <class id="13" language="java" name="restaurentsystem.vLabour" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/ViewLabour.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="245" width="181" x="2517" y="1256"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -164,7 +164,7 @@
     </display>  
   </class>  
   <class id="19" language="java" name="restaurentsystem.MdfItem" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/ModifyItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="443" width="181" x="653" y="1256"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -182,7 +182,7 @@
     </display>  
   </class>  
   <class id="21" language="java" name="restaurentsystem.MdfLabour" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/ModifyLabour.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="443" width="181" x="2830" y="1256"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -200,7 +200,7 @@
     </display>  
   </class>  
   <class id="23" language="java" name="restaurentsystem.DltItem" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/DeleteItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="317" width="181" x="976" y="1256"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -209,7 +209,7 @@
     </display>  
   </class>  
   <class id="24" language="java" name="restaurentsystem.DltLabour" project="RestaurantManagager" 
-    file="/RestaurantManagager/src/restaurentsystem/DeleteLabour.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/RestaurantManagager/RestaurantSystem.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position height="317" width="181" x="3153" y="1256"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -236,200 +236,102 @@
     </display>  
   </class>  
   <dependency id="27">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <association id="28">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="29" name="t"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="31">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="32">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <dependency id="33">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <association id="34">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="35" name="t"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="37">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="26"/>  
-  </dependency>  
-  <association id="38">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="39" name="m"/>      
-      <multiplicity id="40" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="41">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
-  </dependency>  
-  <dependency id="42">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="26"/>  
-  </dependency>  
-  <dependency id="43">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <dependency id="44">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <dependency id="45">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <association id="46">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="47" name="m"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="49">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="50">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <association id="51">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="52" name="it"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="54">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <association id="55">    
-    <bendpoint x="1834" y="719"/>    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="56" name="o"/>      
-      <multiplicity id="57" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="58">    
-    <bendpoint x="1813" y="719"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="26"/>  
-  </dependency>  
-  <association id="59">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="60" name="b"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="63" name="d"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="65">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="66" name="d"/>      
-      <multiplicity id="67" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="68">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="69">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <association id="70">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="71" name="v"/>      
-      <multiplicity id="72" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="73">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="74" name="o"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="76">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="77">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="78">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="79">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="8"/>  
-  </dependency>  
-  <dependency id="80">    
     <bendpoint x="1855" y="719"/>    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="26"/>  
   </dependency>  
-  <dependency id="81">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="22"/>  
+  <association id="28">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="29" name="it">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="32" name="t">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <bendpoint x="1834" y="719"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="35" name="o">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="3"/>  
   </dependency>  
-  <dependency id="82">    
-    <bendpoint x="2486" y="719"/>    
-    <end type="SOURCE" refId="4"/>    
+  <dependency id="38">    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="26"/>  
   </dependency>  
-  <association id="83">    
+  <dependency id="39">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <association id="40">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="41" name="o">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="84" name="r"/>      
-      <multiplicity id="85" minimum="0" maximum="1"/>    
+      <attribute id="44" name="b">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="45" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="46">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="47" name="r">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="48" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="86">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="25"/>  
+  <dependency id="49">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="50">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="3"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

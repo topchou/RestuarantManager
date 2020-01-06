@@ -48,21 +48,21 @@ public class RestaurentManagement extends javax.swing.JFrame {
         orderMngButton.setText("Order Management");
         orderMngButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+            	orderManagementActionPerformed(evt);
             }
         });
 
         labourMngButton.setText("Labour Management");
         labourMngButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+            	LabourManagementActionPerformed(evt);
             }
         });
 
         itemMngButton.setText("Item Management");
         itemMngButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+            	itemManagementActionPerformed(evt);
             }
         });
 
@@ -139,7 +139,7 @@ public class RestaurentManagement extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void itemManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //ItemMngmnt im = new ItemMngmnt();
     	Management im = new Management("Item");
@@ -148,7 +148,7 @@ public class RestaurentManagement extends javax.swing.JFrame {
               
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void LabourManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
        //LabourManagement l = new LabourManagement();
     	Management l=new Management("Labour");
@@ -161,7 +161,7 @@ public class RestaurentManagement extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void orderManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         OrderManagement om = new OrderManagement();
         om.setVisible(true);
