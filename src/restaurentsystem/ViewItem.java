@@ -43,8 +43,9 @@ public class ViewItem extends javax.swing.JFrame{
 
 		viewButton = new javax.swing.JButton();
 		jScrollPane1 = new javax.swing.JScrollPane();
-		text = new javax.swing.JTextArea();
+		showItems = new javax.swing.JTextArea();
 		backButton = new javax.swing.JButton();
+		jLabel0 = new javax.swing.JLabel();
 		jLabel1 = new javax.swing.JLabel();
 		jLabel2 = new javax.swing.JLabel();
 		jLabel3 = new javax.swing.JLabel();
@@ -58,10 +59,10 @@ public class ViewItem extends javax.swing.JFrame{
 			}
 		});
 
-		text.setEditable(false);
-		text.setColumns(20);
-		text.setRows(5);
-		jScrollPane1.setViewportView(text);
+		showItems.setEditable(false);
+		showItems.setColumns(20);
+		showItems.setRows(5);
+		jScrollPane1.setViewportView(showItems);
 
 		backButton.setText("Back");
 		backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +70,7 @@ public class ViewItem extends javax.swing.JFrame{
 				backButtonActionPerformed(evt);
 			}
 		});
-
+		jLabel0.setText("Index");
 		jLabel1.setText("Name");
 		jLabel2.setText("Price");
 		jLabel3.setText("Quantity");
@@ -86,13 +87,13 @@ public class ViewItem extends javax.swing.JFrame{
 												.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301,
 														javax.swing.GroupLayout.PREFERRED_SIZE)
 												.addGroup(layout.createSequentialGroup().addGap(9, 9, 9)
-														.addComponent(jLabel1).addGap(54, 54, 54).addComponent(jLabel2)
-														.addGap(63, 63, 63).addComponent(jLabel3)))))
+														.addComponent(jLabel0).addGap(9, 9, 9).addComponent(jLabel1).addGap(9, 9, 9).addComponent(jLabel2)
+														.addGap(9, 9, 9).addComponent(jLabel3)))))
 						.addContainerGap(74, Short.MAX_VALUE)));
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup().addContainerGap(28, Short.MAX_VALUE)
 						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel1).addComponent(jLabel2).addComponent(jLabel3))
+								.addComponent(jLabel0).addComponent(jLabel1).addComponent(jLabel2).addComponent(jLabel3))
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 						.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 137,
 								javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -108,7 +109,7 @@ public class ViewItem extends javax.swing.JFrame{
 	private void readActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_readActionPerformed
 		// TODO add your handling code here:
 
-		text.setText(t.getFullNames().toString());
+		showItems.setText(t.getFullNames().toString());
 
 	}// GEN-LAST:event_readActionPerformed
 	
@@ -160,12 +161,13 @@ public class ViewItem extends javax.swing.JFrame{
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private javax.swing.JButton backButton;
+	private javax.swing.JLabel jLabel0;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JLabel jLabel3;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JButton viewButton;
-	private javax.swing.JTextArea text;
+	private javax.swing.JTextArea showItems;
 	// End of variables declaration//GEN-END:variables
 
 }

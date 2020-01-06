@@ -37,6 +37,7 @@ public class ViewLabour extends javax.swing.JFrame {
 		jScrollPane1 = new javax.swing.JScrollPane();
 		showLabour = new javax.swing.JTextArea();
 		backButton = new javax.swing.JButton();
+		jLabel0 = new javax.swing.JLabel();
 		jLabel1 = new javax.swing.JLabel();
 		jLabel2 = new javax.swing.JLabel();
 		jLabel3 = new javax.swing.JLabel();
@@ -62,11 +63,9 @@ public class ViewLabour extends javax.swing.JFrame {
 				backButtonActionPerformed(evt);
 			}
 		});
-
+		jLabel0.setText("Index");
 		jLabel1.setText("ID");
-
 		jLabel2.setText("Name");
-
 		jLabel3.setText("Salary");
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -78,14 +77,15 @@ public class ViewLabour extends javax.swing.JFrame {
 								.addGap(31, 31, 31).addComponent(backButton))
 						.addGroup(layout.createSequentialGroup().addGap(54, 54, 54).addComponent(jScrollPane1,
 								javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGroup(layout.createSequentialGroup().addGap(71, 71, 71).addComponent(jLabel1)
-								.addGap(64, 64, 64).addComponent(jLabel2).addGap(49, 49, 49).addComponent(jLabel3)))
+						.addGroup(layout.createSequentialGroup().addGap(71, 71, 71).addComponent(jLabel0)
+								.addGap(9,9,9).addComponent(jLabel1)
+								.addGap(9,9,9).addComponent(jLabel2).addGap(9,9,9).addComponent(jLabel3)))
 				.addContainerGap(45, Short.MAX_VALUE)));
 		layout.setVerticalGroup(
 				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 						.addGroup(layout.createSequentialGroup()
 								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(jLabel1).addComponent(jLabel2).addComponent(jLabel3))
+										.addComponent(jLabel0).addComponent(jLabel1).addComponent(jLabel2).addComponent(jLabel3))
 								.addGap(5, 5, 5)
 								.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148,
 										javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,6 +162,7 @@ public class ViewLabour extends javax.swing.JFrame {
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
 	private javax.swing.JButton backButton;
+	private javax.swing.JLabel jLabel0;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel2;
 	private javax.swing.JLabel jLabel3;
