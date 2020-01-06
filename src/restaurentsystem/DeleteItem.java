@@ -20,6 +20,7 @@ public class DeleteItem extends javax.swing.JFrame {
     
     private Items items;
     private String dltName;
+    private int ID;
     /**
      * Creates new form DeleteItem
      */
@@ -157,8 +158,9 @@ public class DeleteItem extends javax.swing.JFrame {
 
     private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dltButtonActionPerformed
         
-        dltName=dlttext.getText();
-        items.delete(dltName);
+        //dltName=dlttext.getText();
+        ID= Integer.parseInt(dlttext.getText());
+        items.delete(ID);
         JOptionPane.showMessageDialog(this, "Item has been removed");
         dlttext.setText("");
         items = new Items();

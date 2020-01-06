@@ -1,33 +1,3 @@
-Burger
-4
--5
-Fried rice
-5
-80
-Nasi Goreng
-5
-38
-Roso Malay
-6
-95
-Roti
+b
 2
-84
-Faluda
-7
-117
-Chom Chom
 3
-82
-Roti naan
-9
-48
-hello
-22
-22
-
-
-
-
-
-

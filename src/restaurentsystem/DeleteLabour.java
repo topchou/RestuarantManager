@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class DeleteLabour extends javax.swing.JFrame {
 	
 	private Labours labours;
-	private String dltID;
+	private int dltID;
 
 	/**
 	 * Creates new form DeleteLabour
@@ -121,7 +121,7 @@ public class DeleteLabour extends javax.swing.JFrame {
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void dltButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dltButtonActionPerformed
-		dltID = dlttext.getText();
+		dltID = Integer.parseInt(dlttext.getText());
 		
 		labours.delete(dltID);
 		dlttext.setText("");

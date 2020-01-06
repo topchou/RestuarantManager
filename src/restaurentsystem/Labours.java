@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Labours implements ManageTarget{
+	private int index=1;
 	private Scanner scan;
 	private String ID;
 	private String Name;
@@ -43,7 +44,8 @@ public class Labours implements ManageTarget{
 				ID = scan.nextLine();
 				Name = scan.nextLine();
 				Salary = scan.nextLine();
-				fullnames.append(ID + " \t" + Name + " \t" + Salary + "\n");
+				fullnames.append(index+"  "+ ID + "  " + Name + "  " + Salary + "\n");
+				index++;
 			}
 
 		} catch (Exception e) {
@@ -161,9 +163,9 @@ public class Labours implements ManageTarget{
 }
 
 	@Override
-	public void delete(String dltID) {
-
-		String dlt = dltID;
+	public void delete(int index) {
+		int dlt = (index - 1) * 3;
+		//String dlt = dltID;
 		System.out.println(dlt + "will be deleted");
 		int c = 0, track, cnt = 0, temp = 0;
 
@@ -179,14 +181,12 @@ public class Labours implements ManageTarget{
 			sc = new Scanner(new FileInputStream("labour.txt"));
 			while (sc.hasNextLine()) {
 				itemName[c] = sc.nextLine();
-				if (itemName[c].equalsIgnoreCase(dlt)) {
-					temp = c;
-					System.out.println("Index will be deleted" + c);
+				if (c==dlt) {
+					System.out.println("Index "+c+" will be deleted " );
 				}
 				c++;
-
 			}
-
+			sc.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -194,7 +194,7 @@ public class Labours implements ManageTarget{
 		try {
 			PrintWriter pw = new PrintWriter(new FileOutputStream("labour.txt"));
 			for (int i = 0; i < c; i++) {
-				if (i == temp || i == temp + 1 || i == temp + 2) {
+				if (i == dlt || i == dlt + 1 || i == dlt + 2) {
 				} else {
 					pw.println(itemName[i]);
 				}

@@ -16,7 +16,7 @@ public class Items implements ManageTarget{
 	private StringBuilder fullnames;
 	private String itemName[];
 	private String srchName;
-	private int num=1;
+	private int index=1;
     private String s1,s2;
 	
     private int cngQuantity;
@@ -55,8 +55,8 @@ public class Items implements ManageTarget{
 				price = scan.nextLine();
 				quantity = scan.nextLine();
 				//fullnames.append(name + " \t" + price + " \t" + quantity + "\n");
-				fullnames.append(num+"\t"+name + " \t" + price + " \t"+quantity+"\n");
-	            num++;
+				fullnames.append(index+"  "+name + "   " + price + "   "+quantity+"\n");
+	            index++;
 				
 			}
 		} catch (Exception e) {
@@ -175,10 +175,11 @@ public class Items implements ManageTarget{
 	}
     
     @Override
-	public void delete(String dltName) {
+	public void delete(int index) {
 
-		String dlt = dltName;
-		System.out.println(dlt + "will be deleted");
+		// String dlt = dltName;
+		int dlt = (index - 1) * 3;
+		System.out.println(dlt + " will be deleted");
 		int c = 0, track, cnt = 0, temp = 0;
 		try {
 			Scanner sc = new Scanner(new FileInputStream("item.txt"));
@@ -191,19 +192,20 @@ public class Items implements ManageTarget{
 			sc = new Scanner(new FileInputStream("item.txt"));
 			while (sc.hasNextLine()) {
 				itemName[c] = sc.nextLine();
-				if (itemName[c].equalsIgnoreCase(dlt)) {
-					temp = c;
-					System.out.println("Index will be deleted" + c);
+				if (c == dlt) {
+					System.out.println("Index "+c+" will be deleted " );
 				}
 				c++;
 			}
+			sc.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		
 		try {
 			PrintWriter pw = new PrintWriter(new FileOutputStream("item.txt"));
 			for (int i = 0; i < c; i++) {
-				if (i == temp || i == temp + 1 || i == temp + 2) {
+				if (i == dlt || i == dlt + 1 || i == dlt + 2) {
 				} else {
 					pw.println(itemName[i]);
 				}
@@ -211,9 +213,11 @@ public class Items implements ManageTarget{
 			System.out.println("Your item has been deleted.");
 			pw.close();
 		} catch (Exception e) {
+			System.out.println(e);
 		}
-	}
+		
+		
 
-	
+	}
 
 }
