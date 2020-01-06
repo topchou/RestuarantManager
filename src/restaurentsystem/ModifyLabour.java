@@ -68,7 +68,7 @@ public class ModifyLabour extends javax.swing.JFrame {
 
         jLabel4.setText("Enter New Salary");
 
-        jLabel1.setText("Which labour id want to modify");
+        jLabel1.setText("Which labour you want to modify(enter index)");
 
         view.setText("View");
         view.addActionListener(new java.awt.event.ActionListener() {

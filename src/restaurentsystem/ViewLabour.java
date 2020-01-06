@@ -78,22 +78,20 @@ public class ViewLabour extends javax.swing.JFrame {
 						.addGroup(layout.createSequentialGroup().addGap(54, 54, 54).addComponent(jScrollPane1,
 								javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addGroup(layout.createSequentialGroup().addGap(71, 71, 71).addComponent(jLabel0)
-								.addGap(9,9,9).addComponent(jLabel1)
-								.addGap(9,9,9).addComponent(jLabel2).addGap(9,9,9).addComponent(jLabel3)))
+								.addGap(9, 9, 9).addComponent(jLabel1).addGap(9, 9, 9).addComponent(jLabel2)
+								.addGap(9, 9, 9).addComponent(jLabel3)))
 				.addContainerGap(45, Short.MAX_VALUE)));
-		layout.setVerticalGroup(
-				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup()
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(jLabel0).addComponent(jLabel1).addComponent(jLabel2).addComponent(jLabel3))
-								.addGap(5, 5, 5)
-								.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60,
-										Short.MAX_VALUE)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(read).addComponent(backButton))
-								.addGap(50, 50, 50)));
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup()
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel0)
+						.addComponent(jLabel1).addComponent(jLabel2).addComponent(jLabel3))
+				.addGap(5, 5, 5)
+				.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(read)
+						.addComponent(backButton))
+				.addGap(50, 50, 50)));
 
 		pack();
 		setLocationRelativeTo(null);

@@ -67,7 +67,7 @@ public class ModifyItem extends javax.swing.JFrame {
         showItems.setRows(5);
         jScrollPane1.setViewportView(showItems);
 
-        jLabel1.setText("Which item name want to Modify");
+        jLabel1.setText("Which item you want to Modify(enter index)");
 
         view.setText("View");
         view.addActionListener(new java.awt.event.ActionListener() {
